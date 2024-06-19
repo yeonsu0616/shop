@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass //부모 클래스를 상속 받는 자식 크랠스에 매핑정보만 제공
 @Getter
 @Setter
-public  abstract class BaseTimeEntity {
+public  abstract class BaseTimeEntity { //어듀팅 감시자.
     @CreatedDate //생성시 자동 저장
     @Column(updatable = false)
     private LocalDateTime regTime; //등록일
