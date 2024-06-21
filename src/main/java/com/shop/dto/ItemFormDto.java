@@ -39,7 +39,11 @@ public class ItemFormDto {
 
     //상품 이미지 아이디
     private List<Long>ItemImgIds = new ArrayList<>();
+<<<<<<< HEAD
     //-------------------------------------------------------
+=======
+    //----------------------------------------------------
+>>>>>>> 51aaf60b0e6fd3624ab10b6c51aef630e6f8cf71
     //ModelMapper
     private static ModelMapper modelMapper = new ModelMapper();
 

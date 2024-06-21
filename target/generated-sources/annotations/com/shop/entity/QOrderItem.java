@@ -27,7 +27,11 @@ public class QOrderItem extends EntityPathBase<OrderItem> {
     public final NumberPath<Integer> count = createNumber("count", Integer.class);
 
     //inherited
+<<<<<<< HEAD
     public final StringPath createdBy = _super.createdBy;
+=======
+    public final StringPath createBy = _super.createBy;
+>>>>>>> 51aaf60b0e6fd3624ab10b6c51aef630e6f8cf71
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
