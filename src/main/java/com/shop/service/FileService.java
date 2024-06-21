@@ -9,7 +9,7 @@ import java.util.UUID;
 
 
 
-@Service
+@Service //DB를 요청하거나 빼는 일을 함
 @Log
 public class FileService {
     public String uploadFile(String uploadpath,String originalFileName, byte[] fileData)

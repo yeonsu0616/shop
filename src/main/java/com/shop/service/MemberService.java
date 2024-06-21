@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service //DB관리 컨트롤과 연결
+@Service //DB관리. 컨트롤과 연결
 @Transactional
 @RequiredArgsConstructor //final,@NonNull이 변수에 붙으면 자동 주입(Autowired)을 해줌
 public class MemberService implements UserDetailsService {
@@ -19,7 +19,7 @@ public class MemberService implements UserDetailsService {
 
     public Member saveMember(Member member){ //savemember를 멤버 컨트롤에서 부름
         validateDuplicateMember(member);
-        return memberRepository.save(member);
+        return memberRepository.save(member); //데이터베이스에 저장하라는 명령
     }
     private void validateDuplicateMember(Member member){
         Member findMember = memberRepository.findByEmail(member.getEmail()); //객체가 있으면 findmember가 나옴
@@ -37,6 +37,7 @@ public class MemberService implements UserDetailsService {
             throw new UsernameNotFoundException(email);
         }
         //빌더패턴
+        //리턴을 객체를 리턴
         return User.builder().username(member.getEmail())
                 .password(member.getPassword())
                 .roles(member.getRole().toString())

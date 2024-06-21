@@ -39,7 +39,7 @@ public class ItemController {
         model.addAttribute("itemFormDto",new ItemFormDto());
         return "/item/itemForm";
     }
-    @PostMapping(value = "/admin/item/new")
+    @PostMapping(value = "/admin/item/new")//post DB에 저장
     public String itemNew(@Valid ItemFormDto itemFormDto, BindingResult bindingResult, Model model,
                           @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList){
         if(bindingResult.hasErrors()){
@@ -70,7 +70,7 @@ public class ItemController {
         }
         return "item/itemForm";
     }
-
+    //post DB에 저장
     @PostMapping(value = "/admin/item/{itemId}")
     public String itemUpdate(@Valid ItemFormDto itemFormDto, BindingResult bindingResult,
                              @RequestParam("itemImgFile")List<MultipartFile>itemImgFileList,
@@ -109,6 +109,13 @@ public class ItemController {
         model.addAttribute("itemSearchDto",itemSearchDto);
         model.addAttribute("maxPage",5);
         return "item/itemMng";
+    }
+
+    @GetMapping(value = "/item/{itemId}") //itemid를 받아옴
+    public String itemDtl(Model model,@PathVariable("itemId")Long itemId){
+        ItemFormDto itemFormDto = itemService.getItemDtl(itemId);
+        model.addAttribute("item",itemFormDto);
+        return "item/itemDtl";
     }
 
 }
