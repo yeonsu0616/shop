@@ -1,22 +1,20 @@
 package com.shop.controller;
 
 import com.shop.dto.ItemFormDto;
-<<<<<<< HEAD
+
 import com.shop.dto.ItemSearchDto;
 import com.shop.entity.Item;
-=======
->>>>>>> 51aaf60b0e6fd3624ab10b6c51aef630e6f8cf71
+
 import com.shop.service.ItemService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
-<<<<<<< HEAD
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-=======
->>>>>>> 51aaf60b0e6fd3624ab10b6c51aef630e6f8cf71
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,10 +25,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
-<<<<<<< HEAD
+
 import java.util.Optional;
-=======
->>>>>>> 51aaf60b0e6fd3624ab10b6c51aef630e6f8cf71
+
+
 
 @Controller
 @RequiredArgsConstructor
@@ -93,7 +91,7 @@ public class ItemController {
         }
         return "redirect:/"; //다시 실행
     }
-<<<<<<< HEAD
+
     //value 2개인 이유
     //1. 네이게이션에서 상품관리 클릭하면 나오는거
     //2. 상품관리안에서 페이지 이동할 때 받는거
@@ -113,6 +111,4 @@ public class ItemController {
         return "item/itemMng";
     }
 
-=======
->>>>>>> 51aaf60b0e6fd3624ab10b6c51aef630e6f8cf71
 }
