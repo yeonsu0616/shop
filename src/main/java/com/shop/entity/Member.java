@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Table(name = "member") //테이블 명
 @Getter
 @Setter
-@ToString
+@ToString //"toString" 메서드는 객체가 가지고 있는 정보나 값들을 문자열로 만들어 리턴하는 메소드 입니다.
 public class Member extends BaseEntity{
     //기본키 컬럼명 = member_id AI -> 데이터 저장시 1씩 증가
     @Id
